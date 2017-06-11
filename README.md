@@ -1,29 +1,22 @@
-## Setup Windows 10 for Modern/Hipster Development
-A fresh Windows isn't entirely ready for modern development, but all the tools you need are available. A good terminal, popular bash tools, Git, a decent package manager - when properly setup, modern development on Windows can be a lot of fun. In particular, this document outlines how to configure your Windows in such a way that it can easily handle most development tasks usually run on a Mac OS X or a Linux distro.
+## Setup Windows 10 for Development
 
-## A Word about Ubuntu Linux on Windows
-:point_up: While [Bash on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/about) isn't perfect yet, it's an amazing tool that can make development a lot easier - especially when you're dealing with Bash scripts, Ruby, or Ubuntu binaries. I would currently (January 2017) not recommend it as a replacement for Git, Node, or Go - mostly because those tools are already pretty performant on Windows itself. However, they run just fine in Bash, so if you feel like moving most of your development over, go for it. Here's the how-to:
+Installing all tools needed for Cloud Native Development. This setup can generally be used for every language but I personal optimized it for NodeJS / Javascript in combination with AWS.
 
- * Ensure that you're running Windows 10 Anniversary Update (build 14311 and up)
- * Enable Developer Mode (Settings - Update & security > For developers)
- * Search for “Windows Features” and choose “Turn Windows features on or off” and enable Windows Subsystem for Linux (Beta).
- * To get Bash installed, open Command Prompt and type “bash”
-
-## Automate it!
+# Install
 Below, you can see the all the things I need to actually go and work on stuff. If you like all those things, you can automate the installation thanks to the magic of [Boxstarter](http://boxstarter.org/). Simply start PowerShell as Administrator and run:
 
 ```
-START http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/felixrieseberg/windows-development-environment/master/boxstarter
+START http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/dennisseidel/windows-development-environment/master/boxstarter
 ```
 
-## The Goods
+## The Setup
  * [Package Management](#package-management-chocolatey)
  * [Terminal](#terminal-cmder-with-powershell-support)
  * [Bash Tools](#bash-tools-wget-curl-etc-gow)
  * [Node.js](#node)
- * [npm](#npm)
+ * [npm / yarn](#npm)
  * [Git](#git)
- * [Atom, Sublime, VS Code](#code-editors-atom-sublime-vs-code)
+ * [VS Code](#code-editors-atom-sublime-vs-code)
  * [Ruby](#ruby)
  * [Go](#go)
  * [Python](#python)
@@ -66,6 +59,14 @@ Set-ExecutionPolicy Unrestricted -Scope CurrentUser
 ```
 
 If you want to go even futher, check out the attached PowerShell Profile in this repository. It's my personal one and might not be perfect for you, but it makes my personal life a lot easier. You can edit your PowerShell profile with your favorite editor by calling `$PROFILE`, so if you're using Visual Studio Code, call `code $PROFILE` (or `vim $PROFILE` - you get the idea).
+
+## A Word about Ubuntu Linux on Windows
+:point_up: While [Bash on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/about) isn't perfect yet, it's an amazing tool that can make development a lot easier - especially when you're dealing with Bash scripts, Ruby, or Ubuntu binaries. I would currently (January 2017) not recommend it as a replacement for Git, Node, or Go - mostly because those tools are already pretty performant on Windows itself. However, they run just fine in Bash, so if you feel like moving most of your development over, go for it. Here's the how-to:
+
+ * Ensure that you're running Windows 10 Anniversary Update (build 14311 and up)
+ * Enable Developer Mode (Settings - Update & security > For developers)
+ * Search for “Windows Features” and choose “Turn Windows features on or off” and enable Windows Subsystem for Linux (Beta).
+ * To get Bash installed, open Command Prompt and type “bash”
 
 #### Bash Tools (wget, curl, etc): Gow
 If you're coming from a Unix machine, you might miss commands like curl, diff, grep and many other. Gow is your friend - it's a collection of a 100+ famous Unix tools recompiled for Windows.
