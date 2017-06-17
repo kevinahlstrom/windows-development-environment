@@ -2,8 +2,8 @@
 
 #install nodejs
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get -y update && sudo apt-get -y install build-essential nginx nodejs git npm yarn awscli vim ack-grep exuberant-ctags git ruby rake
-sudo npm install -g severless
+sudo apt-get -y update && sudo apt-get -y install build-essential nginx nodejs git awscli vim ack-grep exuberant-ctags ruby rake
+sudo npm install -g serverless
 
 #update bash and vi config
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it

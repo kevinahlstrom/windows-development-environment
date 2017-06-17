@@ -43,8 +43,6 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 Now go into hyper and run `bash` you are promted to install WSL and to give a username and password this takes some seconds. 
 
 ## Setup some defaults for WSL and make it the default shell for hyper
-clone this repo and then:
 ```
-bash
-./configure_wsl.sh
+bash <(curl -s https://raw.githubusercontent.com/dennisseidel/windows-development-environment/master/configure_wsl.sh)
 ```
