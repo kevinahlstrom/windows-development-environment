@@ -1,0 +1,18 @@
+# Login to AWS once a day (requires AWS client installed)
+if [[ ! -e /tmp/$(date +%u).sem ]]
+then
+    touch /tmp/$(date +%u).sem
+    eval $(aws ecr get-login --region us-east-1)
+    docker login -u ${docker_user} -p ${docker_pw}
+fi
+
+# Set AWS profile and region
+export AWS_PROFILE="default" && export AWS_REGION=eu-west-1
+
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+
+# env variables to build kafka client
+export CPPFLAGS=-I/usr/local/opt/openssl/include
+export LDFLAGS=-L/usr/local/opt/openssl/lib
+export PATH="/usr/local/opt/curl/bin:$PATH"
