@@ -27,3 +27,5 @@ if (Test-PendingReboot) { Invoke-Reboot }
 
 # Let's get Updates, too
 Install-WindowsUpdate -acceptEula
+
+lxrun /install /y
