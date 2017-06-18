@@ -12,33 +12,11 @@ START http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/den
 ```
 
 1. Hyper: A better terminal for windows
-```
-cinst -y hyper
-```
 1. Node, npm: Even though we use the WSL node to code some programs like hyper need it installed 
-```
-cinst -y nodejs.install
-```
-1. Editors / IDEs
-```
-cinst -y visualstudiocode
-cinst -y intellijidea-community
-```
-1. Basics tools: 
-```
-cinst -y vlc
-cinst -y GoogleChrome
-cinst -y 7zip.install
-cinst -y sysinternals
-cinst -y DotNet3.5
-cinst -y f.lux
-```
-4. Activate Developer Mode (prerequisit for installing WSL)
-```
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowAllTrustedApps" /d "1"
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-```
+1. Editors / IDEs: Visual Studio Code and IntelliJ
+1. Basics tools: VLC, GoogleChrome, 7zip.install, sysinternals, DotNet3.5
+1. Activate Developer Mode (prerequisit for installing WSL)
+
 ## Activate WSL (Windows Subsystem for Linux)
 Now go into hyper and run `bash` you are promted to install WSL and to give a username and password this takes some seconds. 
 
