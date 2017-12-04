@@ -11,6 +11,6 @@ git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 bash-it enable alias git general
 #curl -L https://bit.ly/janus-bootstrap | bash
 #cat bash_profile_customization >> ~/.bash_profile
-curl -o .hyper.js 'https://raw.githubusercontent.com/dennisseidel/windows-development-environment/master/hyper.js'
+#curl -o .hyper.js 'https://raw.githubusercontent.com/dennisseidel/windows-development-environment/master/hyper.js'
 sudo apt-get install autojump
 bash-it enable plugin autojump
