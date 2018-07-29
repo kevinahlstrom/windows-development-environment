@@ -8,7 +8,7 @@ Installing all tools needed for Cloud Native Development. This setup can general
 Below, you can see the all the things I need to actually go and work on stuff. If you like all those things, you can automate the installation thanks to the magic of [Boxstarter](http://boxstarter.org/). Simply start PowerShell as Administrator and run:
 
 ```
-START http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/dennisseidel/windows-development-environment/master/boxstarter
+START http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/kevinahlstrom/windows-development-environment/master/boxstarter
 ```
 
 1. Hyper: A better terminal for windows
