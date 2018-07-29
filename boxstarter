@@ -3,6 +3,7 @@ Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtec
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowAllTrustedApps" /d "1"
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+Set-TaskbarOptions -Size Small -Dock Bottom -Combine Full -Lock
 Update-ExecutionPolicy Unrestricted
 
 cinst -y Microsoft-Hyper-V-All -source windowsFeatures
@@ -42,6 +43,7 @@ cinst -y office365proplus --x86, --forcex86
 
 ## DevOps
 cinst vagrant
+cinst docker-for-windows
 
 # Let's get Updates, too
 Install-WindowsUpdate -acceptEula
