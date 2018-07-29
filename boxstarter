@@ -1,33 +1,30 @@
+# Boxstarter options
+
+$Boxstarter.RebootOk=$true # Allow reboots?
+$Boxstarter.NoPassword=$false # Is this a machine with no login password?
+$Boxstarter.AutoLogin=$true # Save my password securely and auto-login after a reboot
+
 # Configure Windows
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowAllTrustedApps" /d "1"
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 Set-TaskbarOptions -Size Small -Dock Bottom -Combine Full -Lock
 Update-ExecutionPolicy Unrestricted
+Disable-UAC
 
-cinst -y Microsoft-Hyper-V-All -source windowsFeatures
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
+
+if (Test-PendingReboot) { Invoke-Reboot }
 
 # Packages
 cinst -y hyper
+cinst -y 7zip.install
+cinst -y sysinternals
 
 ## Node, npm
 cinst -y nodejs.install
 
 ## Java JDK
 cinst -y jdk8
-
-## Editors / IDEs
-cinst -y visualstudiocode
-cinst -y intellijidea-community
-if (Test-PendingReboot) { Invoke-Reboot }
-
-## Basics
-cinst -y GoogleChrome
-cinst -y 7zip.install
-cinst -y sysinternals
-cinst -y DotNet3.5
-if (Test-PendingReboot) { Invoke-Reboot }
 
 ## Desktop Apps
 cinst -y vlc
@@ -41,11 +38,29 @@ cinst -y 1password
 #cinst -y hp-universal-print-driver-pcl
 cinst -y office365proplus --x86, --forcex86
 
+## Editors / IDEs
+cinst -y visualstudiocode
+#cinst -y intellijidea-community
+
 ## DevOps
 cinst vagrant
 cinst docker-for-windows
 
-# Let's get Updates, too
-Install-WindowsUpdate -acceptEula
+## Configure .NET environment
+if (Test-PendingReboot) { Invoke-Reboot }
+#cinst -y visualstudio2017community
+#cinst -y visualstudio2017-workload-netweb 
+#cinst -y visualstudio2017-workload-netcoretools 
+cinst -y DotNet3.5
 
-lxrun /install /
+### TODO: remove unwanted apps
+#Get-Contents ./app_to_remove.txt | For-Each {  Get-AppxPackage $_ | Remove-AppxPackage }
+
+# Let's get Updates, too
+Enable-UAC
+Enable-MicrosoftUpdate
+Install-WindowsUpdate -acceptEula
+Update-ExecutionPolicy Unrestricted
+if (Test-PendingReboot) { Invoke-Reboot }
+
+START ms-windows-store://pdp/?ProductId=9nblggh4msv6
