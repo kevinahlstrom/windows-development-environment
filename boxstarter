@@ -13,6 +13,9 @@ cinst -y hyper
 ## Node, npm
 cinst -y nodejs.install
 
+## Java JDK
+cinst -y jdk8
+
 ## Editors / IDEs
 cinst -y visualstudiocode
 cinst -y intellijidea-community
@@ -24,6 +27,22 @@ cinst -y 7zip.install
 cinst -y sysinternals
 cinst -y DotNet3.5
 if (Test-PendingReboot) { Invoke-Reboot }
+
+## Desktop Apps
+cinst -y vlc
+cinst -y makemkv
+cinst -y GoogleChrome
+cinst -y Firefox
+cinst -y spotify
+cinst -y steam
+cinst -y itunes
+cinst -y 1password
+#cinst -y hp-universal-print-driver-pcl
+cinst -y office365proplus --x86, --forcex86
+
+## DevOps
+cinst docker-for-windows
+cinst vagrant
 
 # Let's get Updates, too
 Install-WindowsUpdate -acceptEula
