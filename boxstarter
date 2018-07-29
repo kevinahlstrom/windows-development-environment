@@ -48,9 +48,9 @@ cinst docker-for-windows
 
 ## Configure .NET environment
 if (Test-PendingReboot) { Invoke-Reboot }
-#cinst -y visualstudio2017community
-#cinst -y visualstudio2017-workload-netweb 
-#cinst -y visualstudio2017-workload-netcoretools 
+cinst -y visualstudio2017community
+cinst -y visualstudio2017-workload-netweb 
+cinst -y visualstudio2017-workload-netcoretools 
 cinst -y DotNet3.5
 
 ### TODO: remove unwanted apps
