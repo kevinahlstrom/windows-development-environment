@@ -41,7 +41,6 @@ cinst -y 1password
 cinst -y office365proplus --x86, --forcex86
 
 ## DevOps
-cinst docker-for-windows
 cinst vagrant
 
 # Let's get Updates, too
