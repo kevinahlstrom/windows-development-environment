@@ -7,7 +7,7 @@ then
 fi
 
 # Set AWS profile and region
-export AWS_PROFILE="default" && export AWS_REGION=eu-west-1
+export AWS_PROFILE="default" && export AWS_REGION=us-east-1
 
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
