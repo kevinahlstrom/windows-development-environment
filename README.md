@@ -22,5 +22,5 @@ Now go into hyper and run `bash` you are promted to install WSL and to give a us
 
 ## Setup some defaults for WSL and make it the default shell for hyper
 ```
-bash <(curl -s https://raw.githubusercontent.com/dennisseidel/windows-development-environment/master/configure_wsl.sh)
+bash <(curl -s https://raw.githubusercontent.com/kevinahlstrom/windows-development-environment/master/configure_wsl.sh)
 ```
