@@ -5,6 +5,12 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get -y update && sudo apt-get -y install build-essential nginx nodejs git awscli vim ack-grep exuberant-ctags ruby rake golang
 sudo npm install -g serverless
 
+#install terraform
+sudo apt-get install unzip
+wget https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip
+unzip terraform_0.11.1_linux_amd64.zip
+sudo mv terraform /usr/local/bin/
+
 #update bash and vi config
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 ~/.bash_it/install.sh
