@@ -22,6 +22,8 @@ cinst -y sysinternals
 
 ## Node, npm
 cinst -y nodejs.install
+refreshenv
+npm install -g npm-windows-upgrade
 
 ## Java JDK
 cinst -y jdk8
@@ -38,9 +40,8 @@ cinst -y 1password
 #cinst -y hp-universal-print-driver-pcl
 cinst -y office365proplus --x86, --forcex86
 
-## Editors / IDEs
+## Editors
 cinst -y visualstudiocode
-#cinst -y intellijidea-community
 
 ## DevOps
 cinst vagrant
