@@ -3,7 +3,7 @@
 #install nodejs and go
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get -y update && sudo apt-get -y install build-essential nginx nodejs git awscli vim ack-grep exuberant-ctags ruby rake golang
-sudo npm install -g serverless
+sudo npm install -g serverless #errors?
 
 #install terraform
 sudo apt-get -y install unzip
