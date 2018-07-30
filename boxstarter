@@ -53,7 +53,7 @@ if (Test-PendingReboot) { Invoke-Reboot }
 cinst -y visualstudio2017community
 #cinst -y visualstudio2017-workload-netweb #errors
 #cinst -y visualstudio2017-workload-netcoretools #errors
-cinst -y DotNet3.5
+#cinst -y DotNet3.5 #errors
 
 ### TODO: remove unwanted apps
 #Get-Contents ./app_to_remove.txt | For-Each {  Get-AppxPackage $_ | Remove-AppxPackage }
