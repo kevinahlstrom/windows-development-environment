@@ -13,6 +13,7 @@ Disable-UAC
 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
+Enable-WindowsOptionalFeature -Online -FeatureName netfx3
 
 if (Test-PendingReboot) { Invoke-Reboot }
 
@@ -53,10 +54,14 @@ if (Test-PendingReboot) { Invoke-Reboot }
 cinst -y visualstudio2017community
 #cinst -y visualstudio2017-workload-netweb #errors
 #cinst -y visualstudio2017-workload-netcoretools #errors
-Add-WindowsCapability –Online -Name NetFx3~~~~
+#Add-WindowsCapability –Online -Name NetFx3~~~~ #errors
 
 ### TODO: remove unwanted apps
 #Get-Contents ./app_to_remove.txt | For-Each {  Get-AppxPackage $_ | Remove-AppxPackage }
+
+### TODO: desktop pinning
+#Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Google\Chrome\Application\chrome.exe"
+#Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe"
 
 # Let's get Updates, too
 Enable-UAC
