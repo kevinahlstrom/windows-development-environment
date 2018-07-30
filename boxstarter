@@ -1,4 +1,5 @@
 # Boxstarter options
+# https://blog.zerosharp.com/provisioning-a-new-development-machine-with-boxstarter/
 
 $Boxstarter.RebootOk=$true # Allow reboots?
 $Boxstarter.NoPassword=$false # Is this a machine with no login password?
@@ -6,7 +7,7 @@ $Boxstarter.AutoLogin=$true # Save my password securely and auto-login after a r
 
 # Configure Windows
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar
-Set-TaskbarOptions -Size Small -Dock Bottom -Combine Full -Lock
+Set-TaskbarOptions -Size Small -Dock Bottom -Lock
 Update-ExecutionPolicy Unrestricted
 Disable-UAC
 
